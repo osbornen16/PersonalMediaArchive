@@ -1,0 +1,61 @@
+﻿@model PMA.Models.PlaylistDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlaylistDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaylistId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaylistId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaylistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaylistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaylistObjects)
+        </dt>
+
+            @foreach (var item in Model.PlaylistObjects)
+            {
+                <dd>
+                @Html.DisplayFor(model => item.ObjectName)
+                </dd>
+            }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { PlaylistId = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

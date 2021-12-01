@@ -1,0 +1,45 @@
+﻿@model PMA.Models.TypeDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TypeDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeObjects)
+        </dt>
+
+        @foreach (var item in Model.TypeObjects)
+        {
+            <dd>
+                @Html.DisplayFor(model => item.ObjectName)
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { TypeId = Model.TypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

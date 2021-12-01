@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PMA.Models.ObjectListItem>
+
+@{
+    ViewBag.Title = "Entries";
+}
+
+<h2>Entries</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ObjectId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ObjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contributor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaylistId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ObjectId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ObjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contributor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaylistId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { ObjectId=item.ObjectId }) |
+            @Html.ActionLink("Details", "Details", new { ObjectId=item.ObjectId }) |
+            @Html.ActionLink("Delete", "Delete", new { ObjectId=item.ObjectId })
+        </td>
+    </tr>
+}
+
+</table>
